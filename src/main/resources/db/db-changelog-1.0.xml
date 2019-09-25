@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_users" author="admin">
+        <createTable tableName="users">
+            <column name="user_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_surname" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_age" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_email" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_password" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_cars" author="admin">
+        <createTable tableName="cars">
+            <column name="car_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="car_brand" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_category" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_price" type="double"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="tag-1.0" author="admin">
+        <tagDatabase tag="1.0"/>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_orders" author="admin">
+        <createTable tableName="orders">
+            <column name="order_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="driver_license" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="term" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="car" type="bigint"/>
+            <column name="with_driver" type="bit"/>
+
+            <column name="order_amount" type="double">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_invoices" author="admin">
+        <createTable tableName="invoices">
+            <column name="invoice_id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="invoice_date" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="invoice_description" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="invoice_amount" type="double">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
